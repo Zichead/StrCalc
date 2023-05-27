@@ -8,7 +8,7 @@ class StrCalc{
         String answer = Calc.calc(expression);
 
         if (answer.length()>40){
-            answer = "\"" + answer + "..." + "\"";
+            answer = "\"" + answer.substring(0, 39) + "..." + "\"";
             System.out.println( answer );
         }else{
             answer = "\"" + answer  + "\"";
@@ -41,11 +41,11 @@ class Calc {
             throw new ThrowExeption();
         }
 
-        if (firstStr.length() > 10 && firstStr.length() < 1){  //Исключаем слишком большие строки
+        if (firstStr.length() > 10 ){  //Исключаем слишком большие строки
             throw new ThrowExeption();
         }
 
-        if (secondStr.length() > 10 && secondStr.length() < 1){  //Исключаем слишком большие строки 2
+        if (secondStr.length() > 10 ){  //Исключаем слишком большие строки 2
             throw new ThrowExeption();
         }
 
